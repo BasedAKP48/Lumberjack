@@ -17,12 +17,19 @@ rootRef.child('messages').orderByChild('timeReceived').startAt(Date.now()).on('c
   // we can only log for messages that have the info we need.
   if (msg.extra_client_info) {
     let extra = msg.extra_client_info;
+    let direction = msg.direction === 'in' ? 'IN :' : 'OUT:';
     let connector = `${(extra.connectorType || 'Unknown')}/${(extra.connectorName || msg.cid || 'Unknown')}`;
     let server = extra.server || 'Unknown';
     let channel = extra.channel || 'Unknown';
     let source = extra.source || 'Unknown';
+    let plugin = '';
 
-    let logMsg = `[${e.key}] {${connector}} ${server}/${channel}: ${source}`;
+    if (msg.direction === 'out') {
+      plugin = `(${extra.pluginName}/${extra.pluginInstance})`;
+      source = extra.connectorBotName || 'Unknown';
+    }
+
+    let logMsg = `${direction} [${e.key}] {${connector}} ${server}/${channel}: ${source} ${plugin}`;
 
     logger.info(logMsg);
   }
