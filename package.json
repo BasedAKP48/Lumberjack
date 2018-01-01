@@ -1,0 +1,29 @@
+{
+  "name": "basedakp48-plugin-lumberjack",
+  "version": "1.0.0",
+  "description": "Lumberjack - master of logs.",
+  "license": "MIT",
+  "repository": "BasedAKP48/Lumberjack",
+  "author": {
+    "name": "Austin Peterson",
+    "email": "austin@akpwebdesign.com",
+    "url": "https://blog.akpwebdesign.com/"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "basedakp48-plugin"
+  ],
+  "dependencies": {
+    "firebase-admin": "^5.0.0",
+    "pino": "^4.10.2"
+  },
+  "devDependencies": {}
+}
