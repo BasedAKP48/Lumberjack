@@ -14,6 +14,11 @@ const rootRef = admin.database().ref();
 rootRef.child('messages').orderByChild('timeReceived').startAt(Date.now()).on('child_added', (e) => {
   let msg = e.val();
 
+  // we can only log messages that allow it.
+  if (msg.extra_client_info && msg.extra_client_info.secret || msg.type === 'internal') {
+    return;
+  }
+
   let extra = msg.extra_client_info || {};
   let direction = msg.direction === 'in' ? 'IN :' : 'OUT:';
   let connector = `${(extra.connectorType || 'Unknown')}/${(extra.connectorName || msg.cid || 'Unknown')}`;
