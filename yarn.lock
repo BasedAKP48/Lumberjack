@@ -2,6 +2,12 @@
 # yarn lockfile v1
 
 
+"@basedakp48/plugin-utils@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@basedakp48/plugin-utils/-/plugin-utils-1.6.0.tgz#d927af2b5d93ec98dbae3808b1dd5c1c0b05fb1d"
+  dependencies:
+    firebase-admin "^5.6.0"
+
 "@firebase/app-types@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@firebase/app-types/-/app-types-0.1.0.tgz#27069ba4f8d74990eae7c88ec8f3d282e5215786"
@@ -105,8 +111,8 @@
     through2 "^2.0.3"
 
 "@google-cloud/storage@^1.2.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-1.5.1.tgz#6c790260b87e7a1bcc637ec3747151db75bcf34f"
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-1.5.2.tgz#5e206603570f5d1cee4681b23919d8f3655e4e60"
   dependencies:
     "@google-cloud/common" "^0.15.1"
     arrify "^1.0.0"
@@ -579,7 +585,7 @@ faye-websocket@0.9.3:
   dependencies:
     websocket-driver ">=0.5.1"
 
-firebase-admin@^5.0.0:
+firebase-admin@^5.0.0, firebase-admin@^5.6.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/firebase-admin/-/firebase-admin-5.6.0.tgz#aaf21c0bf031d1ec9e35fc8f0f68b2ebd42cdc8a"
   dependencies:

@@ -2,11 +2,9 @@ const admin = require('firebase-admin');
 const serviceAccount = require('./serviceAccount.json');
 const pino = require('pino');
 const logger = pino({ prettyPrint: true });
+const {initialize} = require('@basedakp48/plugin-utils');
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: `https://${serviceAccount.project_id}.firebaseio.com`
-});
+initialize(admin, serviceAccount);
 
 const rootRef = admin.database().ref();
 
