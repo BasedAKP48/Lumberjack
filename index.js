@@ -26,7 +26,7 @@ rootRef.child('messages').orderByChild('timeReceived').startAt(Date.now()).on('c
   let plugin = '';
 
   if (msg.direction === 'out') {
-    plugin = `(${extra.pluginName}/${extra.pluginInstance})`;
+    plugin = `(${extra.pluginName||'Unknown'}/${extra.pluginInstance||msg.uid})`;
     source = extra.connectorBotName || 'Unknown';
   }
 
