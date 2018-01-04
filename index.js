@@ -13,11 +13,11 @@ rootRef.child('messages').orderByChild('timeReceived').startAt(Date.now()).on('c
   let msg = e.val();
 
   // we can only log messages that allow it.
-  if (msg.extra_client_info && msg.extra_client_info.secret || msg.type === 'internal') {
+  if (msg.data && msg.data.secret || msg.type === 'internal') {
     return;
   }
 
-  let extra = msg.extra_client_info || {};
+  let extra = msg.data || {};
   let direction = msg.direction === 'in' ? 'IN :' : 'OUT:';
   let connector = `${(extra.connectorType || 'Unknown')}/${(extra.connectorName || msg.cid || 'Unknown')}`;
   let server = extra.server || 'Unknown';
