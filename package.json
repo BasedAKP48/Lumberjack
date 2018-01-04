@@ -22,7 +22,7 @@
     "basedakp48-plugin"
   ],
   "dependencies": {
-    "@basedakp48/plugin-utils": "^1.6.0",
+    "@basedakp48/plugin-utils": "^1.10.0",
     "firebase-admin": "^5.0.0",
     "pino": "^4.10.2"
   },
